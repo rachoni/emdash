@@ -5,6 +5,7 @@ import { defineConfig, fontProviders } from "astro/config";
 import emdash from "emdash/astro";
 
 export default defineConfig({
+	site: "https://rachoni.onrender.com"
 	output: "server",
 	adapter: cloudflare(),
 	image: {
@@ -14,6 +15,7 @@ export default defineConfig({
 	integrations: [
 		react(),
 		emdash({
+			siteUrl: "https://rachoni.onrender.com"
 			database: d1({ binding: "DB", session: "auto" }),
 			storage: r2({ binding: "MEDIA" }),
 		}),
